@@ -1,0 +1,273 @@
+{
+  "intents": [
+
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Is anyone there?",
+        "Good day",
+        "Hi there"
+      ],
+      "responses": [
+        "Hello! How can I help you with your career today?",
+        "Hi! I'm here to guide you in your career journey.",
+        "Hey there! Ask me anything about careers."
+      ]
+    },
+
+    {
+      "tag": "career_confusion",
+      "patterns": [
+        "I am confused about my career",
+        "I don't know what to do",
+        "I am confused",
+        "Which career should I choose?",
+        "I feel lost"
+      ],
+      "responses": [
+        "It's completely normal to feel confused. Start by identifying your interests, strengths, and long-term goals.",
+        "Career confusion is common. Try exploring skills, internships, and projects to gain clarity."
+      ]
+    },
+
+    {
+      "tag": "career_after_graduation",
+      "patterns": [
+        "What to do after graduation?",
+        "Career options after college",
+        "What should I do after degree?",
+        "After graduation career guidance"
+      ],
+      "responses": [
+        "After graduation, you can explore jobs, higher studies, internships, or skill-based learning depending on your interest.",
+        "Focus on building skills, projects, and practical experience after graduation."
+      ]
+    },
+
+    {
+      "tag": "data_science_roadmap",
+      "patterns": [
+        "How to become a data scientist?",
+        "Data science roadmap",
+        "What should I learn for data science?",
+        "Career in data science"
+      ],
+      "responses": [
+        "To become a data scientist, learn Python, SQL, statistics, machine learning, and build real-world projects.",
+        "A strong data science roadmap includes programming, data analysis, ML models, and portfolio projects."
+      ]
+    },
+
+    {
+      "tag": "data_analyst_roadmap",
+      "patterns": [
+        "How to become a data analyst?",
+        "Data analyst roadmap",
+        "Career in data analysis"
+      ],
+      "responses": [
+        "To become a data analyst, focus on Excel, SQL, Python, data visualization tools, and analytical thinking.",
+        "Build dashboards, analyze datasets, and practice SQL queries regularly."
+      ]
+    },
+
+    {
+      "tag": "skills_for_freshers",
+      "patterns": [
+        "Skills required for freshers",
+        "What skills should a fresher learn?",
+        "Important skills for freshers"
+      ],
+      "responses": [
+        "Freshers should focus on communication, problem-solving, basic programming, and domain-specific skills.",
+        "Technical skills plus soft skills give freshers an edge in interviews."
+      ]
+    },
+
+    {
+      "tag": "resume_tips",
+      "patterns": [
+        "How to make a resume?",
+        "Resume tips for freshers",
+        "How to improve resume?"
+      ],
+      "responses": [
+        "Keep your resume concise, project-focused, and skill-oriented.",
+        "Highlight projects, skills, certifications, and internships instead of marks."
+      ]
+    },
+
+    {
+      "tag": "internship_guidance",
+      "patterns": [
+        "How to get internships?",
+        "Internship guidance",
+        "Where to find internships?"
+      ],
+      "responses": [
+        "Apply through LinkedIn, Internshala, company websites, and referrals.",
+        "Focus on skill-based internships rather than paid ones initially."
+      ]
+    },
+
+    {
+      "tag": "project_importance",
+      "patterns": [
+        "Are projects important?",
+        "Why projects are important?",
+        "Do projects matter for jobs?"
+      ],
+      "responses": [
+        "Projects show practical knowledge and problem-solving ability.",
+        "Recruiters value projects more than certificates for freshers."
+      ]
+    },
+
+    {
+      "tag": "job_vs_higher_studies",
+      "patterns": [
+        "Job or higher studies?",
+        "Should I do masters?",
+        "Job vs MS"
+      ],
+      "responses": [
+        "Choose higher studies if you want specialization or research exposure.",
+        "Choose a job if you want industry experience and financial independence."
+      ]
+    },
+
+    {
+      "tag": "interview_preparation",
+      "patterns": [
+        "How to prepare for interviews?",
+        "Interview preparation tips",
+        "How to crack interviews?"
+      ],
+      "responses": [
+        "Prepare fundamentals, practice questions, and work on communication.",
+        "Mock interviews and consistent revision help crack interviews."
+      ]
+    },
+
+    {
+      "tag": "confidence_building",
+      "patterns": [
+        "How to build confidence?",
+        "I lack confidence",
+        "Confidence tips"
+      ],
+      "responses": [
+        "Confidence comes from preparation and practice.",
+        "Small wins and consistent learning build confidence over time."
+      ]
+    },
+
+    {
+      "tag": "career_gap",
+      "patterns": [
+        "How to explain career gap?",
+        "Career gap issue",
+        "Gap after graduation"
+      ],
+      "responses": [
+        "Explain your gap honestly by focusing on learning, skill-building, or personal growth.",
+        "A well-explained gap with skills is not a problem."
+      ]
+    },
+
+    {
+      "tag": "linkedin_profile",
+      "patterns": [
+        "How to improve LinkedIn profile?",
+        "LinkedIn tips for freshers",
+        "Optimize LinkedIn profile"
+      ],
+      "responses": [
+        "Use a professional photo, clear headline, and project-based summary.",
+        "Be active by posting projects and learning updates."
+      ]
+    },
+
+    {
+      "tag": "first_job_fear",
+      "patterns": [
+        "I am scared of first job",
+        "First job fear",
+        "Nervous about job"
+      ],
+      "responses": [
+        "Feeling nervous about your first job is completely normal.",
+        "Focus on learning and asking questions during your initial months."
+      ]
+    },
+
+    {
+      "tag": "salary_expectation",
+      "patterns": [
+        "How much salary should I expect?",
+        "Salary for freshers",
+        "Expected salary"
+      ],
+      "responses": [
+        "Salary depends on skills, location, and company.",
+        "Focus on learning and growth rather than only salary in your first job."
+      ]
+    },
+
+    {
+      "tag": "career_motivation",
+      "patterns": [
+        "I feel demotivated",
+        "Lost motivation",
+        "Career motivation"
+      ],
+      "responses": [
+        "Take breaks and remind yourself why you started.",
+        "Consistency beats motivation in the long run."
+      ]
+    },
+
+    {
+      "tag": "soft_skills",
+      "patterns": [
+        "What are soft skills?",
+        "Importance of soft skills",
+        "Soft skills for job"
+      ],
+      "responses": [
+        "Soft skills include communication, teamwork, adaptability, and time management.",
+        "Strong soft skills help you grow faster in your career."
+      ]
+    },
+
+    {
+      "tag": "career_switch",
+      "patterns": [
+        "How to switch career?",
+        "Career change guidance",
+        "Switching career path"
+      ],
+      "responses": [
+        "Start by learning required skills and building beginner projects.",
+        "Career switching takes time but is achievable with consistency."
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Thank you",
+        "See you later"
+      ],
+      "responses": [
+        "You're welcome! Best of luck with your career.",
+        "Goodbye! Keep learning and growing."
+      ]
+    }
+
+  ]
+}

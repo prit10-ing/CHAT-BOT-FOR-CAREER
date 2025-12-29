@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Guidance Chatbot</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        🎓 Career Guidance Chatbot
+        <span>For Freshers</span>
+    </div>
+
+    <div class="chat-box" id="chat-box">
+        <div class="bot-message">
+            👋 Hi! I’m here to guide you in your career journey.  
+            Ask me anything about jobs, skills, or roadmap.
+        </div>
+    </div>
+
+    <!-- IMPORTANT: onsubmit triggers user interaction -->
+    <form class="chat-input" onsubmit="sendMessage(event)">
+        <input 
+            type="text" 
+            id="user-input" 
+            placeholder="Type your question..." 
+            autocomplete="off"
+            required 
+        />
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<!-- JS MUST be loaded at the END -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
