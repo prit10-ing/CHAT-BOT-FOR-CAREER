@@ -1,4 +1,5 @@
 import os
+import threading
 
 # -------------------------
 # ✅ FIX NLTK DATA PATH (CRITICAL FOR RENDER)
@@ -7,7 +8,6 @@ BASE_DIR = os.getcwd()
 NLTK_DATA_DIR = os.path.join(BASE_DIR, "nltk_data")
 os.makedirs(NLTK_DATA_DIR, exist_ok=True)
 
-# Tell NLTK where to look for data
 os.environ["NLTK_DATA"] = NLTK_DATA_DIR
 os.environ["DISABLE_TF_SIGNAL_HANDLER"] = "1"
 
@@ -24,6 +24,8 @@ import random
 # -------------------------
 nltk.download("punkt", download_dir=NLTK_DATA_DIR, quiet=True)
 nltk.download("punkt_tab", download_dir=NLTK_DATA_DIR, quiet=True)
+nltk.download("wordnet", download_dir=NLTK_DATA_DIR, quiet=True)
+nltk.download("omw-1.4", download_dir=NLTK_DATA_DIR, quiet=True)  # 🔥
 
 lemmatizer = WordNetLemmatizer()
 
@@ -34,26 +36,25 @@ model = None
 intents = None
 words = None
 classes = None
+_load_lock = threading.Lock()  # 🔥
 
 
 def load_resources_once():
-    """
-    Load ML model and resources only once
-    (prevents blocking Gunicorn startup)
-    """
     global model, intents, words, classes
 
     if model is None:
-        model = tf.keras.models.load_model("ds_chatbot_model.h5")
+        with _load_lock:  # 🔥 prevent race condition
+            if model is None:
+                model = tf.keras.models.load_model("ds_chatbot_model.h5")
 
-        with open("job_intents.json", encoding="utf-8") as f:
-            intents = json.load(f)
+                with open("job_intents.json", encoding="utf-8") as f:
+                    intents = json.load(f)
 
-        with open("words.pkl", "rb") as f:
-            words = pickle.load(f)
+                with open("words.pkl", "rb") as f:
+                    words = pickle.load(f)
 
-        with open("classes.pkl", "rb") as f:
-            classes = pickle.load(f)
+                with open("classes.pkl", "rb") as f:
+                    classes = pickle.load(f)
 
 
 def clean_up_sentence(sentence):
