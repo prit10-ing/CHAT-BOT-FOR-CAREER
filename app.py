@@ -1,6 +1,5 @@
 from flask import Flask, render_template, jsonify, request
 import processor
-import os
 
 app = Flask(__name__)
 
@@ -18,10 +17,5 @@ def chatbot_response():
     response = processor.chatbot_response(user_question)
     return jsonify({"response": response})
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # works locally & on cloud
-    app.run(
-        host="0.0.0.0",
-        port=port,
-        debug=False
-    )
+# ❌ DO NOT use app.run() in production
+# Gunicorn will handle server & port binding
