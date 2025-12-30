@@ -11,6 +11,8 @@ import random
 
 # Download tokenizer safely
 nltk.download("punkt", quiet=True)
+nltk.download("punkt_tab", quiet=True)
+
 
 lemmatizer = WordNetLemmatizer()
 
