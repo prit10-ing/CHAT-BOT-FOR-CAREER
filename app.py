@@ -7,15 +7,29 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
 @app.route("/chatbot", methods=["POST"])
 def chatbot_response():
-    user_question = request.form.get("question", "").strip()
+    try:
+        # ✅ Support both JSON (fetch API) and form submission
+        data = request.get_json(silent=True)
 
-    if not user_question:
-        return jsonify({"response": "Please ask a valid question."})
+        if data and "question" in data:
+            user_question = data.get("question", "").strip()
+        else:
+            user_question = request.form.get("question", "").strip()
 
-    response = processor.chatbot_response(user_question)
-    return jsonify({"response": response})
+        if not user_question:
+            return jsonify({"response": "Please ask a valid question."})
 
-# ❌ DO NOT use app.run() in production
-# Gunicorn will handle server & port binding
+        response = processor.chatbot_response(user_question)
+        return jsonify({"response": response})
+
+    except Exception as e:
+        # 🔴 Prevent 500 error and log issue
+        print("Chatbot error:", e)
+        return jsonify({
+            "response": "Sorry, something went wrong. Please try again."
+        }), 500
+
+
