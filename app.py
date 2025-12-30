@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request
 import processor
+import os
 
 app = Flask(__name__)
 
@@ -18,29 +19,9 @@ def chatbot_response():
     return jsonify({"response": response})
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # works locally & on cloud
     app.run(
-        debug=True,
-        use_reloader=False,   
         host="0.0.0.0",
-        port=5000
+        port=port,
+        debug=False
     )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
