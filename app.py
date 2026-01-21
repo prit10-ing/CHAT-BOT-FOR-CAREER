@@ -11,7 +11,6 @@ def index():
 @app.route("/chatbot", methods=["POST"])
 def chatbot_response():
     try:
-        # ✅ Support both JSON (fetch API) and form submission
         data = request.get_json(silent=True)
 
         if data and "question" in data:
@@ -26,10 +25,12 @@ def chatbot_response():
         return jsonify({"response": response})
 
     except Exception as e:
-        # 🔴 Prevent 500 error and log issue
         print("Chatbot error:", e)
         return jsonify({
             "response": "Sorry, something went wrong. Please try again."
         }), 500
 
 
+# 🔥 THIS WAS MISSING
+if __name__ == "__main__":
+    app.run(debug=True)
